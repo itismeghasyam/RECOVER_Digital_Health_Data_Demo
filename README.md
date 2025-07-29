@@ -31,6 +31,7 @@ This section shows how to [**write/save results**](write/write_data.R) (e.g., fr
 ## Requirements
 
 - Access to the **Seven Bridges platform** with appropriate project permissions.
+- Access to RECOVER project on **Synapse platform**.
 
 ---
 
