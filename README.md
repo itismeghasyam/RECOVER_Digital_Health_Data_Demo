@@ -28,6 +28,27 @@ This section shows how to [**write/save results**](write/write_data.R) (e.g., fr
 
 ---
 
+## Analysis: Some analysis templates
+
+This section has template for **analysis**: summarizing metrics
+
+#### a. [SD, Mean, Median etc.,](analysis/summary_metrics.R)
+- Compute summary metrics for selected vars, per participant
+
+#### b. [sample data](analysis/load_example_data.R)
+- Load example data for analysis template
+
+---
+
+## NOTE: Sleep Analysis
+
+#### a. Sleep Regularity Index (SRI)
+To read more about how to compute Sleep Regularity Index (SRI), please refer to these two files: [function CODE](https://github.com/itismeghasyam/recover-sleep-measures/blob/main/scripts/functions/sri.R) and [execution CODE](https://github.com/itismeghasyam/recover-sleep-measures/blob/main/scripts/sri.R)
+
+#### b. Sleep SD Measures
+To read more about how to compute Sleep SD Measures, please refer to this script: [sleepSD.R](https://github.com/itismeghasyam/recover-sleep-measures/blob/main/scripts/sleepSD.R)
+
+
 ## Requirements
 
 - Access to the **Seven Bridges platform** with appropriate project permissions.
