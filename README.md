@@ -40,6 +40,13 @@ This section has template for **analysis**: summarizing metrics
 
 ---
 
+## Data Dictionaries
+
+This section has data dictionaries for each of the datasets. A data dictionary has two
+columns, "FIELD" and "DESCRIPTION", FIELD(columns) available in the dataset and their DESCRIPTIONS
+
+---
+
 ## NOTE: Sleep Analysis
 
 #### a. Sleep Regularity Index (SRI)
