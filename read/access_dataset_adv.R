@@ -12,16 +12,22 @@ cohort <- 'adults'
 dataset_type <- 'dataset_fitbitdailydata'
 
 ## Subset of participants we want to access the data of
-## Getting current subset using a file on seven bridges, replace the list with your own
-participant_list <- read.csv('/sbgenomics/project-files/adults_drs_manifest_2025-04-17.csv') %>% 
+## Getting current subset using folders(each participants has their own folder) in considered dataset
+participants_path <-  paste0('/sbgenomics/project-files/RECOVER_DigitalHealth_RawData/',
+                                 ARCHIVE_VERSION,'/',
+                                 cohort,'/',
+                                 dataset_type,'/')
+df_enrolled <- arrow::open_dataset(participants_path) 
+participant_list <- df_enrolled$files %>%
+  as.data.frame() %>%
+  `colnames<-`('filePath') %>% 
   dplyr::rowwise() %>% 
-  dplyr::mutate(ParticipantID = strsplit(name,'/')[[1]][5]) %>% 
-  dplyr::mutate(datasetType = strsplit(name,'/')[[1]][4]) %>% 
+  dplyr::mutate(ParticipantIdentifier = stringr::str_split(filePath, '/')[[1]][11]) %>% 
   dplyr::ungroup() %>% 
+  dplyr::select(ParticipantIdentifier) %>% 
   unique() %>% 
-  dplyr::filter(datasetType == dataset_type) %>% 
   dplyr::slice_sample(n=30) %>% 
-  dplyr::pull(ParticipantID) 
+  unlist()
 
 ## Iterate over all participants to create list of individual parquet files
 dataset_sources_fileList <- lapply(participant_list, function(participant_id){
