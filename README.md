@@ -32,7 +32,7 @@ This section shows how to [**write/save results**](write/write_data.R) (e.g., fr
 
 This section has template for **analysis**: summarizing metrics
 
-#### a. [SD, Mean, Median etc.,](analysis/summary_metrics.R)
+#### a. [SD, Mean, Median etc.,](analysis/analysis_summary_metrics.R)
 - Compute summary metrics for selected vars, per participant
 
 #### b. [sample data](analysis/load_example_data.R)
